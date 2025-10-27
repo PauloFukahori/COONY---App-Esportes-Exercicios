@@ -1,0 +1,67 @@
+[
+  {
+    "id": "temp-user-id",
+    "usuario": "runner_jane",
+    "email": "jane@coony.com",
+    "nome": "Jane Smith",
+    "bio": "Corredora de maratona e entusiasta de yoga. Adoro me conectar com outros atletas!",
+    "avatar": null,
+    "localizacao": "Nova York, NY",
+    "interesses": ["corrida", "yoga", "trilha"],
+    "ritmo": "8:30/mi",
+    "distanciaPreferida": "5-10K",
+    "nivelExperiencia": "intermediário"
+  },
+  {
+    "id": "u1",
+    "usuario": "mike_runner",
+    "email": "mike@coony.com",
+    "nome": "Mike Johnson",
+    "bio": "Especialista em 5K, correndo todas as manhãs há 5 anos",
+    "avatar": null,
+    "localizacao": "São Francisco, CA",
+    "interesses": ["corrida", "ciclismo"],
+    "ritmo": "7:45/mi",
+    "distanciaPreferida": "5K",
+    "nivelExperiencia": "avançado"
+  },
+  {
+    "id": "u2",
+    "usuario": "sarah_cyclist",
+    "email": "sarah@coony.com",
+    "nome": "Sarah Williams",
+    "bio": "Ciclista de fim de semana. Procurando parceiros de pedal!",
+    "avatar": null,
+    "localizacao": "Los Angeles, CA",
+    "interesses": ["ciclismo", "natação"],
+    "ritmo": "18mph",
+    "distanciaPreferida": "20-30 milhas",
+    "nivelExperiencia": "intermediário"
+  },
+  {
+    "id": "u3",
+    "usuario": "tom_yoga",
+    "email": "tom@coony.com",
+    "nome": "Tom Brown",
+    "bio": "Instrutor de yoga e corredor de trilha. Encontrando equilíbrio no movimento.",
+    "avatar": null,
+    "localizacao": "Boston, MA",
+    "interesses": ["yoga", "trilha", "corrida"],
+    "ritmo": "9:00/mi",
+    "distanciaPreferida": "10K",
+    "nivelExperiencia": "iniciante"
+  },
+  {
+    "id": "u4",
+    "usuario": "lisa_hiker",
+    "email": "lisa@coony.com",
+    "nome": "Lisa Davis",
+    "bio": "Amante das montanhas. Conquistando trilhas passo a passo.",
+    "avatar": null,
+    "localizacao": "Denver, CO",
+    "interesses": ["trilha", "corrida"],
+    "ritmo": "8:45/mi",
+    "distanciaPreferida": "10-15K",
+    "nivelExperiencia": "intermediário"
+  }
+]

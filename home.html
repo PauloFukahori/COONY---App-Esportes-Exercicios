@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coony – Sua Comunidade Esportiva</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main style="padding: 2rem; max-width: 1000px; margin: auto;">
+    <section style="text-align: center; margin-bottom: 3rem;">
+      <h1 style="margin-bottom: 1rem; font-size: 2rem;">🏃 Encontre sua Equipe de Corrida</h1>
+      <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: hsl(var(--muted-foreground));">
+        Descubra eventos em Recife, conecte-se com atletas e participe de uma comunidade que se movimenta junta.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="events.html" class="button">📅 Explorar Eventos</a>
+        <a href="event-create.html" class="button" style="background-color: hsl(var(--muted)); color: hsl(var(--muted-foreground));">➕ Criar Evento</a>
+      </div>
+    </section>
+
+    <section style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem;">
+      <div style="text-align: center;">
+        <strong style="font-size: 1.5rem;">78+</strong>
+        <p style="color: hsl(var(--muted-foreground));">Eventos cadastrados</p>
+      </div>
+      <div style="text-align: center;">
+        <strong style="font-size: 1.5rem;">500+</strong>
+        <p style="color: hsl(var(--muted-foreground));">Participantes ativos</p>
+      </div>
+    </section>
+
+    <section id="eventos-lista" style="display: block;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+        <!-- Corrida -->
+        <div style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow);">
+          <img src="https://i0.wp.com/www.perunning.com.br/wp-content/uploads/2025/07/marco-zero-do-recife-antigo_recife_2025.jpg?fit=1536%2C1024&ssl=1" alt="Corrida no Marco Zero" style="width: 100%; border-radius: var(--radius); margin-bottom: 1rem;" />
+          <h3 style="margin-bottom: 0.5rem;">Corrida Matinal</h3>
+          <p>📍 Marco Zero – Recife Antigo</p>
+          <p>📅 22/10/2025 às 06:30</p>
+          <a href="event-detail.html#evento-corrida" class="button" style="margin-top: 0.5rem;">Ver Detalhes</a>
+        </div>
+
+        <!-- Ciclismo -->
+        <div style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow);">
+          <img src="https://macae.rj.gov.br/midia/noticias/31885/1402357909.jpg" alt="Ciclismo na Orla de Boa Viagem" style="width: 100%; border-radius: var(--radius); margin-bottom: 1rem;" />
+          <h3 style="margin-bottom: 0.5rem;">Ciclismo na Orla de BV</h3>
+          <p>📍 Boa Viagem — Recife</p>
+          <p>📅 26/10/2025 às 07:00</p>
+          <a href="event-detail.html#evento-ciclismo" class="button" style="margin-top: 0.5rem;">Ver Detalhes</a>
+        </div>
+
+        <!-- Yoga -->
+        <div style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow);">
+          <img src="https://tecnofit-site.s3.sa-east-1.amazonaws.com/media/files/2022/05/05175635/montar-studio-de-yoga-2048x1365.jpg" alt="Yoga na UFPE" style="width: 100%; border-radius: var(--radius); margin-bottom: 1rem;" />
+          <h3 style="margin-bottom: 0.5rem;">Yoga na UFPE</h3>
+          <p>📍 Campus UFPE — Recife</p>
+          <p>📅 28/10/2025 às 08:00</p>
+          <a href="event-detail.html#evento-yoga" class="button" style="margin-top: 0.5rem;">Ver Detalhes</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="eventos-mapa" style="display: none; margin-top: 2rem;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15894.2746107255!2d-34.8782646!3d-8.0631491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a4c3f4e3b1%3A0x9f7e1f6e6f6e6f6e!2sMarco%20Zero%2C%20Recife%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+        width="100%"
+        height="400"
+        style="border:0; border-radius: var(--radius); box-shadow: var(--shadow);"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+  </main>
+
+  <script src="js/styles.js" defer></script>
+  <script>
+    let visualizacao = "grade";
+
+    function mudarVisualizacao(tipo) {
+      visualizacao = tipo;
+      document.getElementById("eventos-lista").style.display = tipo === "grade" ? "block" : "none";
+      document.getElementById("eventos-mapa").style.display = tipo === "mapa" ? "block" : "none";
+    }
+
+    function filtrarEventos() {
+      const busca = document.getElementById("busca")?.value.toLowerCase() || "";
+      const esporte = document.getElementById("filtro-esporte")?.value || "todos";
+      const dificuldade = document.getElementById("filtro-dificuldade")?.value || "todos";
+
+      console.log("Filtrando por:", busca, esporte, dificuldade);
+    }
+  </script>
+</body>
+</html>

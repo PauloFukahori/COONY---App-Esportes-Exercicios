@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coony – Sua Comunidade Esportiva</title>
+  <meta name="description" content="Descubra eventos esportivos em Recife e conecte-se com atletas da sua região." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: var(--background);
+      color: var(--foreground);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: hsl(var(--muted));
+      border-bottom: 1px solid hsl(var(--border));
+    }
+    nav h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    nav .menu {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    nav .menu a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      background-color: hsl(var(--accent));
+      color: white;
+      font-weight: 600;
+    }
+    .theme-toggle {
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navegação -->
+  <nav>
+    <h1>🏅 Coony</h1>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="events.html">Eventos</a>
+      <a href="event-create.html">Criar Evento</a>
+      <a href="match.html">Meus Eventos</a>
+      <a href="profile.html">Perfil</a>
+    </div>
+    <button class="button theme-toggle">🌙 Alternar Tema</button>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main style="padding: 2rem; max-width: 1000px; margin: auto;">
+    <!-- Chamada principal -->
+    <section style="text-align: center; margin-bottom: 3rem;">
+      <h2 style="margin-bottom: 1rem; font-size: 2rem;">🏃 Encontre sua Equipe de Corrida</h2>
+      <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: hsl(var(--muted-foreground));">
+        Descubra eventos em Recife, conecte-se com atletas e participe de uma comunidade que se movimenta junta.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="events.html" class="button">📅 Explorar Eventos</a>
+        <a href="event-create.html" class="button" style="background-color: hsl(var(--muted)); color: hsl(var(--muted-foreground));">➕ Criar Evento</a>
+      </div>
+    </section>
+
+    <!-- Métricas -->
+    <section style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem;">
+      <div style="text-align: center;">
+        <strong style="font-size: 1.5rem;">78+</strong>
+        <p style="color: hsl(var(--muted-foreground));">Eventos cadastrados</p>
+      </div>
+      <div style="text-align: center;">
+        <strong style="font-size: 1.5rem;">500+</strong>
+        <p style="color: hsl(var(--muted-foreground));">Participantes ativos</p>
+      </div>
+    </section>
+
+    <!-- Cards de eventos -->
+    <section id="eventos-lista">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+        <!-- Corrida -->
+        <div style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow);">
+          <img src="https://i0.wp.com/www.perunning.com.br/wp-content/uploads/2025/07/marco-zero-do-recife-antigo_recife_2025.jpg?fit=1536%2C1024&ssl=1" alt="Corrida no Marco Zero" style="width: 100%; border-radius: var(--radius); margin-bottom: 1rem;" />
+          <h3 style="margin-bottom: 0.5rem;">Corrida Matinal</h3>
+          <p>📍 Marco Zero – Recife Antigo</p>
+          <p>📅 22/10/2025 às 06:30</p>
+          <a href="event-detail.html#evento-corrida" class="button" style="margin-top: 0.5rem;">Ver Detalhes</a>
+        </div>
+
+        <!-- Ciclismo -->
+        <div style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow);">
+          <img src="https://macae.rj.gov.br/midia/noticias/31885/1402357909.jpg" alt="Ciclismo na Orla de Boa Viagem" style="width: 100%; border-radius: var(--radius); margin-bottom: 1rem;" />
+          <h3 style="margin-bottom: 0.5rem;">Ciclismo na Orla de BV</h3>
+          <p>📍 Boa Viagem — Recife</p>
+          <p>📅 26/10/2025 às 07:00</p>
+          <a href="event-detail.html#evento-ciclismo" class="button" style="margin-top: 0.5rem;">Ver Detalhes</a>
+        </div>
+
+        <!-- Yoga -->
+        <div style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow);">
+          <img src="https://tecnofit-site.s3.sa-east-1.amazonaws.com/media/files/2022/05/05175635/montar-studio-de-yoga-2048x1365.jpg" alt="Yoga na UFPE" style="width: 100%; border-radius: var(--radius); margin-bottom: 1rem;" />
+          <h3 style="margin-bottom: 0.5rem;">Yoga na UFPE</h3>
+          <p>📍 Campus UFPE — Recife</p>
+          <p>📅 28/10/2025 às 08:00</p>
+          <a href="event-detail.html#evento-yoga" class="button" style="margin-top: 0.5rem;">Ver Detalhes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/styles.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

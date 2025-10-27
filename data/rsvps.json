@@ -1,0 +1,32 @@
+[
+  {
+    "id": "r1",
+    "eventoId": "e1",
+    "usuarioId": "u1",
+    "status": "confirmado"
+  },
+  {
+    "id": "r2",
+    "eventoId": "e1",
+    "usuarioId": "temp-user-id",
+    "status": "interessado"
+  },
+  {
+    "id": "r3",
+    "eventoId": "e2",
+    "usuarioId": "u2",
+    "status": "confirmado"
+  },
+  {
+    "id": "r4",
+    "eventoId": "e3",
+    "usuarioId": "u3",
+    "status": "confirmado"
+  },
+  {
+    "id": "r5",
+    "eventoId": "e4",
+    "usuarioId": "u4",
+    "status": "confirmado"
+  }
+]

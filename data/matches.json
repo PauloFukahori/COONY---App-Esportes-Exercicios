@@ -1,0 +1,23 @@
+[
+  {
+    "id": "m1",
+    "usuarioId": "temp-user-id",
+    "usuarioRelacionadoId": "u1",
+    "status": "pendente",
+    "porcentagemCompatibilidade": 60
+  },
+  {
+    "id": "m2",
+    "usuarioId": "temp-user-id",
+    "usuarioRelacionadoId": "u2",
+    "status": "aceito",
+    "porcentagemCompatibilidade": 50
+  },
+  {
+    "id": "m3",
+    "usuarioId": "temp-user-id",
+    "usuarioRelacionadoId": "u3",
+    "status": "recusado",
+    "porcentagemCompatibilidade": 40
+  }
+]

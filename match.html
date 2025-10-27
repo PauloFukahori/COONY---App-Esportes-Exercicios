@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encontre sua Dupla</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main style="padding: 2rem; max-width: 600px; margin: auto;">
+    <section style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="margin-bottom: 0.5rem;">✨ Encontre sua Dupla</h1>
+      <p>Conecte-se com atletas que compartilham seus interesses e objetivos</p>
+    </section>
+
+    <section id="match-card" style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem;">
+      <div style="text-align: center;">
+        <img src="images/avatar1.jpg" alt="Foto do atleta" class="avatar" />
+        <h2 style="margin-top: 1rem;">João Silva</h2>
+        <p>🏃 Corrida • Médio • 5K</p>
+        <p>📍 São Paulo, SP</p>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+        <button onclick="conectar()" class="button">Conectar</button>
+        <button onclick="pular()" class="button" style="background-color: hsl(var(--muted)); color: hsl(var(--muted-foreground));">Passar</button>
+      </div>
+
+      <p class="contador" style="text-align: center; margin-top: 1rem;">1 de 5</p>
+    </section>
+
+    <section style="margin-top: 2rem;">
+      <h3 style="margin-bottom: 0.5rem;">Dicas para Conexão</h3>
+      <ul style="padding-left: 1.25rem; list-style: disc; color: hsl(var(--muted-foreground));">
+        <li>Conecte-se com quem pratica os mesmos esportes</li>
+        <li>Busque ritmo e distância compatíveis</li>
+        <li>Participe de eventos juntos para fortalecer sua rede</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/styles.js" defer></script>
+  <script src="js/matches.js" defer></script>
+  <script>
+    let indiceAtual = 0;
+    const totalPerfis = 5;
+
+    function conectar() {
+      alert("Solicitação de conexão enviada!");
+      proximo();
+    }
+
+    function pular() {
+      proximo();
+    }
+
+    function proximo() {
+      indiceAtual = (indiceAtual + 1) % totalPerfis;
+      document.querySelector(".contador").textContent = `${indiceAtual + 1} de ${totalPerfis}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Evento — Coony</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main style="padding: 2rem; max-width: 700px; margin: auto;">
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 style="margin-bottom: 0.5rem;">📣 Criar Evento Novo</h1>
+      <p style="margin-bottom: 1rem; color: hsl(var(--muted-foreground));">
+        Compartilhe suas atividades esportivas com a comunidade de Recife, vamos juntos!
+      </p>
+      <a href="events.html" class="button">← Voltar para Eventos</a>
+    </header>
+
+    <form id="form-evento" style="display: flex; flex-direction: column; gap: 1rem;">
+      <label for="titulo">Título do Evento</label>
+      <input type="text" id="titulo" name="titulo" class="input" placeholder="Corrida matinal no Marco Zero" required />
+
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao" class="textarea" placeholder="Descreva seu evento..." rows="4" required></textarea>
+
+      <label for="modalidade">Modalidade Esportiva</label>
+      <select id="modalidade" name="modalidade" class="input">
+        <option value="corrida">Corrida</option>
+        <option value="ciclismo">Ciclismo</option>
+        <option value="yoga">Yoga</option>
+        <option value="trilha">Trilha</option>
+        <option value="natação">Natação</option>
+      </select>
+
+      <label for="dificuldade">Nível de Dificuldade</label>
+      <select id="dificuldade" name="dificuldade" class="input">
+        <option value="facil">Fácil</option>
+        <option value="medio" selected>Médio</option>
+        <option value="dificil">Difícil</option>
+      </select>
+
+      <label for="data">Data</label>
+        <input type="date" id="data" name="data" class="input" required />
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" class="input" required />
+
+
+      <label for="local">Local</label>
+      <select id="local" name="local" class="input" onchange="selecionarLocal(this.value)">
+       <option value="">Selecione o local</option>
+       <option value="Parque da Jaqueira">Parque da Jaqueira, Recife</option>
+      <option value="Segundo Jardim">Segundo Jardim de Boa Viagem</option>
+      <option value="Marco Zero">Marco Zero, Recife Antigo</option>
+      <option value="Parque Santana">Parque Santana, Zona Norte</option>
+      <option value="Orla de Olinda">Orla de Olinda</option>
+      <option value="Cais de Santa Rita">Cais de Santa Rita</option>
+      <option value="Outro">Outro (escreva abaixo)</option>
+    </select>
+
+<div id="campo-outro-local" style="display: none;">
+  <label for="localPersonalizado">Local Personalizado</label>
+  <input type="text" id="localPersonalizado" name="localPersonalizado" class="input" placeholder="Digite o nome do local" />
+</div>
+
+
+      <input type="hidden" id="latitude" name="latitude" />
+      <input type="hidden" id="longitude" name="longitude" />
+
+      <label for="distancia">Distância (opcional)</label>
+      <input type="text" id="distancia" name="distancia" class="input" placeholder="5K, 10 milhas, etc." />
+
+      <label for="maxParticipantes">Máximo de Participantes (opcional)</label>
+      <input type="number" id="maxParticipantes" name="maxParticipantes" class="input" placeholder="Ex: 20" />
+
+      <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+        <a href="events.html" class="button">Cancelar</a>
+        <button type="submit" class="button">Criar Evento</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/styles.js" defer></script>
+  <script>
+  function selecionarLocal(local) {
+    const campoOutro = document.getElementById("campo-outro-local");
+    const inputOutro = document.getElementById("localPersonalizado");
+
+    const coordenadas = {
+      "Parque da Jaqueira": { lat: -8.035, lng: -34.902 },
+      "Segundo Jardim": { lat: -8.127, lng: -34.894 },
+      "Marco Zero": { lat: -8.063, lng: -34.871 },
+      "Parque Santana": { lat: -8.013, lng: -34.918 },
+      "Orla de Olinda": { lat: -7.998, lng: -34.849 },
+      "Cais de Santa Rita": { lat: -8.068, lng: -34.877 },
+    };
+
+    if (local === "Outro") {
+      campoOutro.style.display = "block";
+      document.getElementById("latitude").value = "";
+      document.getElementById("longitude").value = "";
+    } else {
+      campoOutro.style.display = "none";
+      inputOutro.value = "";
+      const coords = coordenadas[local];
+      if (coords) {
+        document.getElementById("latitude").value = coords.lat;
+        document.getElementById("longitude").value = coords.lng;
+      }
+    }
+  }
+
+  document.getElementById("form-evento").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const localSelecionado = document.getElementById("local").value;
+    const localPersonalizado = document.getElementById("localPersonalizado").value;
+    const localFinal = localSelecionado === "Outro" ? localPersonalizado : localSelecionado;
+
+    console.log("Evento criado em:", localFinal);
+    alert("Evento criado com sucesso!");
+  });
+</script>
+
+</body>
+</html>

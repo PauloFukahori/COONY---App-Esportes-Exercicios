@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil do Usuário</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main style="padding: 2rem; max-width: 800px; margin: auto;">
+    <section style="margin-bottom: 2rem;">
+      <div style="height: 200px; background-color: hsl(var(--muted)); border-radius: var(--radius);"></div>
+
+      <div style="margin-top: -60px; text-align: center;">
+        <img src="images/avatar1.jpg" alt="Foto do usuário" class="avatar" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid hsl(var(--background));" />
+        <h1 style="margin-top: 1rem;">Maria Oliveira</h1>
+        <p>📍 São Paulo, SP</p>
+        <p class="bio" style="margin-top: 0.5rem;">Apaixonada por esportes e organizadora de eventos comunitários.</p>
+
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="button" style="background-color: hsl(var(--accent)); color: hsl(var(--accent-foreground));">Corrida</span>
+          <span class="button" style="background-color: hsl(var(--accent)); color: hsl(var(--accent-foreground));">Yoga</span>
+          <span class="button" style="background-color: hsl(var(--accent)); color: hsl(var(--accent-foreground));">Trilha</span>
+        </div>
+
+        <button class="button" style="margin-top: 1.5rem;">Conectar</button>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+      <div style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+        <div style="flex: 1; border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; text-align: center;">
+          <p>🏃 Ritmo Médio</p>
+          <strong>5:30 min/km</strong>
+        </div>
+        <div style="flex: 1; border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; text-align: center;">
+          <p>📏 Distância Preferida</p>
+          <strong>10K</strong>
+        </div>
+        <div style="flex: 1; border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem; text-align: center;">
+          <p>🏅 Nível de Experiência</p>
+          <strong>Intermediário</strong>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin-bottom: 1rem;">Eventos Organizados</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+        <div style="border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: 1rem;">
+          <h3 style="margin-bottom: 0.5rem;">Corrida Matinal</h3>
+          <p>Parque Central, Nova York</p>
+          <p>📅 22/10/2025 às 16:00</p>
+          <a href="event-detail.html" class="button" style="margin-top: 0.5rem;">Ver Detalhes</a>
+        </div>
+        <!-- Adicione mais cards conforme necessário -->
+      </div>
+    </section>
+  </main>
+
+  <script src="js/styles.js" defer></script>
+</body>
+</html>
